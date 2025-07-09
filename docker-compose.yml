@@ -1,0 +1,8 @@
+services:
+  nginx:
+    image: nginx
+    container_name: NginX-P
+    build: ./
+    ports:
+      - "8080:8080"
+    restart: always

@@ -1,0 +1,24 @@
+#----------- WELCOME -----------#
+
+NginX-P is a Simple & Portable NginX server deployer.
+You can use this to locally host any Webpage OR quickly test verious NginX behaviours and cases, simply by modifying the 'default.conf' file in the Config folder.
+This is particularly useful for testing and comparing your own WebServer behaviour and see if it matches NginX's.
+The Makefile calls 'docker compose' which creates the Docker image based on the docker-compose.yml parameters and the Dockerfile specified.
+The image also includes Nano and CURL if you want to enter the container and modify/test from within.
+
+#--------- HOW TO USE: ---------#
+
+Simply run 'make' at the root of the repository. The Container will automatically start and attach to the Terminal you ran 'make' in.
+
+If you want to modify the config file and try again:
+	Stop the hanging Terminal with a SIGINT (Ctrl + C) and run 'make clean'. This stops the container and takes down the Compose.
+	Run 'make' again after modifying the config file to your liking.
+	Avoid using 'fclean' or 're' because they also clear the Cache, which will make the next 'make' you run take longer.
+		Use this only if you want to completely start over with no cache or if something is not working correctly.
+
+If you want to access the Container:
+	Open a new Terminal window, since this one has NginX attached to it.
+	Run 'docker ps'. This will list your active containers. There should be only one: the NginX-P Container.
+	Copy the Container ID on the left.
+	Run 'docker exec -it <CONTAINER-ID> bash' with the Container ID you copied.
+		This'll give you a Bash TTY directly executed from inside your container.
