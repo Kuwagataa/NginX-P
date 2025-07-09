@@ -9,6 +9,8 @@ The image also includes Nano and CURL if you want to enter the container and mod
 #--------- HOW TO USE: ---------#
 
 Simply run 'make' at the root of the repository. The Container will automatically start and attach to the Terminal you ran 'make' in.
+Then go to the Browser of your choosing and go to http://localhost:8080/ to view your Homepage (depending on your configuration).
+
 
 If you want to modify the config file and try again:
 	Stop the hanging Terminal with a SIGINT (Ctrl + C) and run 'make clean'. This stops the container and takes down the Compose.
